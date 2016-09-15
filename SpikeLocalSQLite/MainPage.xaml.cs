@@ -40,7 +40,20 @@ namespace SpikeLocalSQLite
             using (var db = new BloggingContext())
             {
                 var blog = new Blog { Url = NewBlogUrl.Text };
-                db.Blogs.Add(blog);
+                db.Blogs.Add(blog);                
+                db.SaveChanges();
+
+                Blogs.ItemsSource = db.Blogs.ToList();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new BloggingContext())
+            {
+                var blogfirst = db.Blogs.First();
+                blogfirst.Url = NewBlogUrl.Text;
+
                 db.SaveChanges();
 
                 Blogs.ItemsSource = db.Blogs.ToList();

@@ -13,6 +13,7 @@
         <StackPanel>
             <TextBox Name="NewBlogUrl"></TextBox>
             <Button Click="Add_Click">Add</Button>
+            <Button Click="Button_Click">Update</Button>
             <ListView Name="Blogs">
                 <ListView.ItemTemplate>
                     <DataTemplate>
