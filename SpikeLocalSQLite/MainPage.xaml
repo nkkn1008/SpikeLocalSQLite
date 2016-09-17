@@ -14,6 +14,7 @@
             <TextBox Name="NewBlogUrl"></TextBox>
             <Button Click="Add_Click">Add</Button>
             <Button Click="Button_Click">Update</Button>
+            <Button Click="Delete_Click">DeleteFirst</Button>
             <ListView Name="Blogs">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -59,5 +59,17 @@ namespace SpikeLocalSQLite
                 Blogs.ItemsSource = db.Blogs.ToList();
             }
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new BloggingContext())
+            {
+                var blog = db.Blogs.First();
+                db.Remove(blog);
+                db.SaveChanges();
+
+                Blogs.ItemsSource = db.Blogs.ToList();
+            }
+        }
     }
 }
