@@ -15,6 +15,7 @@
             <Button Click="Add_Click">Add</Button>
             <Button Click="Button_Click">Update</Button>
             <Button Click="Delete_Click">DeleteFirst</Button>
+            <Button Click="Query_Click">Query</Button>
             <ListView Name="Blogs">
                 <ListView.ItemTemplate>
                     <DataTemplate>

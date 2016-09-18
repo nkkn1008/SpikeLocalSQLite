@@ -71,5 +71,17 @@ namespace SpikeLocalSQLite
                 Blogs.ItemsSource = db.Blogs.ToList();
             }
         }
+
+        private void Query_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new BloggingContext())
+            {
+                var blogs = context.Blogs
+                    .Where(b => b.Url.Contains("test"))
+                    .ToList();
+
+                Blogs.ItemsSource = blogs;
+            }
+        }
     }
 }
